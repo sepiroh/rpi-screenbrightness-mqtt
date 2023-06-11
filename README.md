@@ -27,11 +27,11 @@ restart the service with ` sudo systemctl restart rpi_screenbrightness_mqtt`
 to enable control of the backlight via a homeassistant light use the following configuration:
 
 ~~~~
-light:
-  - platform: mqtt
-    name: "dashboard backlight"
-    state_topic: "stat/rpi1/power"
+mqtt:
+  light:
+    name: "Brillo Panel"
     command_topic: "cmnd/rpi1/power"
+    state_topic: "stat/rpi1/power"
     brightness_state_topic: "stat/rpi1/brightness"
     brightness_command_topic: "cmnd/rpi1/brightness"
     brightness_scale: 100
